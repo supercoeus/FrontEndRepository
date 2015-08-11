@@ -1,0 +1,47 @@
+body{
+	width: 100%;
+	height: 100%;
+	background-color: darkgoldenrod;
+}
+
+.menu{
+	width: 30%;
+	height: 100%;
+}
+
+.topMenu{
+	width: 100%;
+	height: 40px;
+	background-color: darkgreen;	
+}
+
+.SecondMenu{
+	width: 80%;
+	height: 35px;
+	background-color: #5F9EA0;
+}
+ul{
+	margin: 0px;
+	padding: 0px;
+}
+
+a{
+	text-decoration: none;
+}
+
+li{
+	list-style-type: none;
+}
+
+.selected{
+	background-color: red;
+}
+
+.show{
+	display: block;
+}
+
+.hide{
+	display: none;
+}
+

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>二级菜单</title>
+		<link rel="stylesheet" href="../css/SecondMenu.css" />
+		<script type="text/javascript" src="../js/angular.js" ></script>
+		<script type="text/javascript" src="../js/twoSecond.js" ></script>
+	</head>
+	
+	
+	<body ng-app="secondMenuModule" >
+		
+		<div ng-controller="twoMenuController">
+			<div class="menu">
+				<ul>  
+			        <li ng-repeat="top in topMenus" >
+			        	<a  href="#" ng-click="showTop($index)" class="topMenu" >{{top.name}}</a> 
+			                <ul id="rule" ng-class="{'show':top.active,'hide':!top.active}">  
+			                    <li style="margin-left: 10px;" ng-repeat="second in secondMenus[$index]" ng-click="selectSecond($index)"><a ng-class = "{'selected':second.select}"  href="#">{{second.name}}</a></li>  
+			                </ul>
+			        </li> 
+			    </ul>  
+			</div>
+		</div>
+		
+	</body>
+</html>
