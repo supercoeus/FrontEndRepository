@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>表单验证</title>
+		<script type="text/javascript" src="js/angular-1.4.3/angular.js" ></script>
+		<script type="text/javascript" src="js/angular-1.4.3/angular-messages.js" ></script>
+		<script type="text/javascript" src="js/formValid.js" ></script>
+		
+	</head>
+	<body>
+		<div ng-app="formValid">
+			<form name="signup_form" novalidate ng-submit="signupForm()" ng-controller="formValidController">
+				<label>Your name</label> 
+					<input type="text" placeholder="用户名" name="userName" ng-model="userName" ng-minlength=3 ng-maxlength=20 required /> 
+					<div class="error" ng-messages="signup_form.userName.$error" ng-messages-multiple" >
+						<div ng-message="required">用户名不能为空！</div> 
+						<div ng-message="minlength">用户名至少三个字符！</div> 
+						<div ng-message="maxlength">用户名长度不能超过20个字符！</div> 						 
+					</div> 
+					<button type="submit">提交</button> 
+			</form>
+		</div>
+	</body>
+</html>
