@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="js/angular.js" ></script>
+		<script type="text/javascript" src="js/useDirective.js" ></script>
+		<title>使用angularJs的指令</title>
+	</head>
+	<body>
+		<div ng-app="directiveModule"> 
+			<div my-directive></div>
+			<input type="text" ng-model="urlF" />
+			<div have-param-directive url-b="urlF" name1="百度  带参数"></div>
+			
+			<!--内置指令-->
+			<div ng-controller="innerDirectiveController">
+				<!--是否可以编辑，不可以选中-->
+				<input type="text" value="姓名" ng-disabled="true" />
+				<input type="text" value="姓名" ng-disabled="false" />
+				<!--是否只读,只读不可编辑，但可以选中-->
+				<input type="text" value="姓名" ng-readonly="true" />
+				<input type="text" value="姓名" ng-readonly="false" />
+				
+				<!--链接没有被赋值之前，点击没有作用-->
+				<a href="{{imgHref}}">美女图片</a>
+				<img ng-src="{{imgSrc}}">美女</img>
+				<input type="text" ng-model="person.name"/> 
+				<div ng-switch on="person.name"> 
+					<p ng-switch-default>And the winner is</p> 
+					<h1 ng-switch-when="Ari">{{ person.name }}</h1> 
+				</div>
+				
+				<div ng-if="2+2===5"> 
+					false,的时候在源码中也看不到 
+				</div> 
+				<div ng-if="2+2===4"> 
+					Hi, I do exist 
+				</div> 
+			</div>
+		</div>
+	</body>
+</html>
