@@ -37,6 +37,24 @@
 					Hi, I do exist 
 				</div> 
 			</div>
+			
+			<!--隔离作用域-->
+			<div ng-controller="CloseOffScopeController">
+				指令外部:{{myProperty}}
+				<div close-off-scope-directive ng-init="myProperty='哈哈'"> 
+					指令内部：{{myProperty}}
+				</div>
+				<div my-inherit-scope-directive></div> 
+			</div>
+			
+			<!--自定以验证-->
+			<input type="text" 
+				placeholder="Desired username" 
+				name="username"
+				ng-model="signup.username" 
+				ng-minlength="3" 
+				ng-maxlength="20" 
+				ensure-unique="username" required /> 
 		</div>
 	</body>
 </html>

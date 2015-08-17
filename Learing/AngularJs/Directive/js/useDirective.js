@@ -35,3 +35,42 @@ directiveModule.controller("innerDirectiveController",function($scope,$timeout){
 	}, 2000); 
 	
 });
+
+//隔离指令的作用域
+directiveModule.controller("CloseOffScopeController",
+		function($scope){}).directive('closeOffScopeDirective',function(){
+			return {
+				restrict:'A',
+				scope:{},
+				priority:100,
+				template:'<div>指令内部{{myProprity}}</div>'
+			}
+		}).directive('myInheritScopeDirective', function() { 
+			return { 
+				restrict: 'A', 
+				template: 'Inside myDirective, isolate scope: {{ myProperty }}', 
+				scope: true 
+			}; 
+		});
+		
+		
+//自定以验证
+directiveModule.directive('ensureUnique',function($http) { 
+	return{ 
+		require: 'ngModel', 
+		link: function(scope, ele, attrs, c) { 
+			scope.$watch(attrs.ngModel, function() { 
+				$http({ 
+					method: 'POST', 
+					url: '/api/check/' + attrs.ensureUnique, 
+					data: {field: attrs.ensureUnique, valud:scope.ngModel}
+				}).success(function(data,status,headers,cfg) { 
+					c.$setValidity('unique', data.isUnique); 
+				}).error(function(data,status,headers,cfg) { 
+					c.$setValidity('unique', false);
+					alert(false);
+				});
+			}); 
+		} 
+	}
+});
