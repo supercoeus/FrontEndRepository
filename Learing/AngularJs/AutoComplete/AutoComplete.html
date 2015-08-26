@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>    
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="text/javascript" src="js/angular.js" ></script>
+    <script type="text/javascript" src="js/ng-tags-input.js" ></script>
+    <link rel="stylesheet" href="css/ng-tags-input.css" />
+    <script type="text/javascript" src="js/AutoComplete.js" ></script>
+</head>
+<body ng-app="myApp" ng-controller="MyCtrl">
+    <tags-input 
+    	ng-model="tags" 
+    	min-length="2" 
+    	max-length="100" 
+    	min-tags="2"
+    	max-tags="5"
+    	allow-leftover-text="true"
+ 		enable-editing-last-tag = "true"
+ 		add-from-autocomplete-only = "false";
+ 		spellcheck = "false">
+        	<auto-complete 
+        		source = "loadTags()"
+        		debounce-delay = "100"
+        		min-length = "1"
+        		max-results-to-show = "10"
+        		load-on-down-arrow = "true"
+        		select-first-match = "true">
+        	</auto-complete>
+    </tags-input>
+</body>
+</html>
