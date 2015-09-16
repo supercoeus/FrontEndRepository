@@ -23,7 +23,6 @@ multi.exec(function(error,replies){
 });
 
 // 发布/订阅模式
-
 var pub = redis.createClient('6379','127.0.0.1');		//发布者
 var sub = redis.createClient('6379','127.0.0.1');		//订阅者
 
