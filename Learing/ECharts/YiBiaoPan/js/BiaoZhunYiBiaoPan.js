@@ -26,7 +26,7 @@ require(
     
     
 function setData(){
-	myChart = echarts.init(document.getElementById('DuiShuZhou')); 
+	myChart = echarts.init(document.getElementById('BiaoZhunYiBiaoPan')); 
 	var option = {
 	    tooltip : {
 	        formatter: "{a} <br/>{b} : {c}%"
