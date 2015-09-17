@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" href="css/TongYongFanYe.css" />
+		<script type="text/javascript" src="js/angular.js" ></script>
+		<script type="text/javascript" src="js/TongYongFanYe.js" ></script>
+	</head>
+	<body>
+		<div>使用angularJs实现的一个通用的翻页</div>
+		<div ng-controller="TurnPageController">
+			<p>共<em>{{pageObj.count}}</em>数据，现在显示第{{(pageObj.cuurPage-1)*pageObj.pageCountOfGroup+1}} - {{(pageObj.cuurPage)*pageObj.pageCountOfGroup}}条</p>
+			<div>
+				<li class="turnPage" ng-click="lastPages()" ng-show="pageObj.isShowLastPages"><a>上一组</a></li>
+				<li ng-repeat="data in pageObj.data" ng-class={'selected':data.selected} class="page" ng-show="data.isShow" ng-click="selectIndex($index)"><a>{{data.number}}</a></li>
+				<li class="turnPage" ng-click="nextPages()" ng-show="pageObj.isShowNextPages"><a>下一组</a></li>
+				<li class="goPage" ><input ng-model="pageObj.goPage" type="text" /><a ng-click="goToPage(pageObj.goPage)">Go</a></li>
+			</div>
+		</div>
+	</body>
+</html>
