@@ -26,7 +26,7 @@ require(
     
     
 function setData(){
-	myChart = echarts.init(document.getElementById('ZheXianTu')); 
+	myChart = echarts.init(document.getElementById('BiaoZhunZheXianTu')); 
 	option = {
 	    title : {
 	        text: '未来一周气温变化',
