@@ -49,6 +49,7 @@ function printfCourseData(courseData) {
 	});
 };
 
+//请求url
 http.get(url,function(res){
 	var html = '';
 	//获取数据
