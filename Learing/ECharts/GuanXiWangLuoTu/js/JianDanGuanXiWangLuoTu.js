@@ -6,7 +6,7 @@ var echarts;
 //  ./当前路径  ../当前路径上一级路径
 require.config({
     paths: {
-        echarts: './js/'
+        echarts: '../plugin/echarts/js/echarts'
     }
 });
 
