@@ -1,10 +1,14 @@
 var myChart;
 var myChart2;
 var myChart3;
+var option;
+var echarts;
 
+//配置图表的路径，如bar(柱状图)
+//  ./当前路径  ../当前路径上一级路径
 require.config({
     paths: {
-        echarts: './js'
+        echarts: '../plugin/echarts/js/echarts'
     }
 });
 
