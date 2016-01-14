@@ -10,7 +10,17 @@
 	<body>
 		<div>使用angularJs实现的一个通用的翻页</div>
 		<div ng-controller="TurnPageController">
-			<p>共<em>{{pageObj.count}}</em>数据，现在显示第{{(pageObj.cuurPage-1)*pageObj.pageCountOfGroup+1}} - {{(pageObj.cuurPage)*pageObj.pageCountOfGroup}}条</p>
+			<table style="width: 100%; height: auto;">
+				<tr>
+		            <th ng-repeat="t in allPageDates[0]">{{t}}</th>
+	            </tr>
+				<tr ng-repeat="p in pageDates track by $index">
+					<th>{{p[0]}}</th>
+					<th>{{p[1]}}</th>
+				</tr>
+			</table>
+			
+			<p>共<em>{{pageObj.count}}</em>数据，现在显示第{{(pageObj.cuurPage-1)*pageObj.pageSize+1}} - {{(pageObj.cuurPage)*pageObj.pageSize > pageObj.count ? pageObj.count:(pageObj.cuurPage)*pageObj.pageSize}}条</p>
 			<div>
 				<li class="turnPage" ng-click="lastPages()" ng-show="pageObj.isShowLastPages"><a>上一组</a></li>
 				<li ng-repeat="data in pageObj.data" ng-class={'selected':data.selected} class="page" ng-show="data.isShow" ng-click="selectIndex($index)"><a>{{data.number}}</a></li>
