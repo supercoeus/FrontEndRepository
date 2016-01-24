@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+
+    <meta charset="UTF-8">
+    <link href="css/toaster.css" rel="stylesheet" />
+    <script src="js/angular-1.4.8/angular.min.js"></script>
+    <script src="js/angular-1.4.8/angular-animate.js"></script>
+    <script src="js/toaster.js"></script>
+    <script src="js/my.js"></script>
+    <meta charset="UTF-8">
+    <title></title>
+
+</head>
+<body ng-app="MyApp">
+<!--添加-->
+<toaster-container></toaster-container>
+
+<div ng-controller="MyCtrl">
+    <input type="button" value="success" ng-click="buttonClick('success')">
+    <input type="button" value="error" ng-click="buttonClick('error')">
+    <input type="button" value="info" ng-click="buttonClick('info')">
+    <input type="button" value="warning" ng-click="buttonClick('warning')">
+</div>
+
+</body>
+</html>
