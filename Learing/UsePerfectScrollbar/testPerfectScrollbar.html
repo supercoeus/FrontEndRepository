@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>测试使用perfect-scrollbar</title>
+		<link rel="stylesheet" href="perfect-scrollbar0.5.5/perfect-scrollbar.min.css" />
+		<script type="text/javascript" src="jquery/jquery-1.9.1.min.js" ></script>
+		<script type="text/javascript" src="perfect-scrollbar0.5.5/jquery.mousewheel.js" ></script>
+		<script type="text/javascript" src="perfect-scrollbar0.5.5/perfect-scrollbar.min.js" ></script>
+		<script type="text/javascript" src="build.js"></script>
+		<style>
+	        .contentHolder { 
+	        	position:relative; 
+	        	margin:0px auto; 
+	        	padding:0px; 
+	        	width: 600px; 
+	        	height: 400px; 
+	        	overflow: hidden; 
+	        }
+	        .content { 
+	        	background-color: darkorange; 
+	        	width: 1000px; 
+	        	height: 100%; 
+	        }
+	        .content li {
+	        	width: 100px;
+	        	height:99%;
+	        	float: left;
+	        	border: 1px solid darkcyan; 
+	        }
+	      </style>
+	      <script>
+			$(function() {
+				$('#default').perfectScrollbar();
+				
+				$("document").on('ps-scroll-left', function () {
+					console.log("SS");
+				});
+				$(document).on('ps-scroll-y', function () {
+					console.log("SS");
+				});
+				$(document).on('ps-scroll-up', function () {
+					console.log("SS");
+				})
+			})
+		  </script>
+	</head>
+	
+	<body>
+		<div id="default" class="contentHolder">
+		    <div class="content">
+		    	<li>121212</li>
+		    	<li>3123</li>
+		    	<li>1212312312</li>
+		    	<li>1213123212</li>
+		    	<li>1212312312</li>
+		    	<li>1231231212</li>
+		    	<li>121312212</li>
+		    	<li>121231212</li>
+		    	<li>121231212</li>
+		    </div>
+		</div>
+	</body>
+</html>
