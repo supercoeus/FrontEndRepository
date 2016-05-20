@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+    <head>
+        <meta charset="UTF-8">
+        <title>测试Angular+KendouiGrid</title>
+        <link rel="stylesheet" href="plugins/kendo-ui/css/kendo.common.min.css" />
+        <link rel="stylesheet" href="plugins/kendo-ui/css/kendo.blueopal.min.css" />
+
+        <script src="plugins/jquery-1.9.1/jquery-1.9.1.min.js"></script>
+        <script src="plugins/angular-1.4.8/angular.min.js"></script>
+        <script src="plugins/kendo-ui/js/kendo.all.min.js"></script>
+        <script src="plugins/kendo-ui/js/messages/kendo.messages.zh-CN.min.js"></script>
+        <script src="js/index2.js"></script>
+    </head>
+    <body>
+
+
+    <div ng-controller="myController">
+        <!--第一个 Grid-->
+        <kendo-grid options="mainGridOptions">
+            <!--显示或隐藏详细信息-->
+            <div k-detail-template>
+                <!--Tab 切换-->
+                <kendo-tabstrip>
+                    <ul>
+                        <li class="k-state-active">Orders</li>
+                        <li>Contact information</li>
+                    </ul>
+                    <!--第一个Tab的内容-->
+                    <div>
+                        <div kendo-grid k-options="detailGridOptions(dataItem)"></div>
+                    </div>
+                    <!--第二个Tab的内容-->
+                    <div>
+                        <ul>
+                            <li>Country: <input ng-model="dataItem.Country" /></li>
+                            <li>City: <input ng-model="dataItem.City" /></li>
+                            <li>Address: {{dataItem.Address}}</li>
+                            <li>Home phone: {{dataItem.HomePhone}}</li>
+                        </ul>
+                    </div>
+                </kendo-tabstrip>
+            </div>
+        </kendo-grid>
+    </div>
+
+
+    </body>
+</html>
