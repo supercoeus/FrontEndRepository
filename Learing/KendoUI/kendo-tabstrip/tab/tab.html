@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+    <head>
+        <meta charset="UTF-8">
+        <title>测试Angular+KendouiGrid</title>
+        <link rel="stylesheet" href="plugins/kendo-ui/css/kendo.common.min.css" />
+        <link rel="stylesheet" href="plugins/kendo-ui/css/kendo.blueopal.min.css" />
+
+        <script src="plugins/jquery-1.9.1/jquery-1.9.1.min.js"></script>
+        <script src="plugins/angular-1.4.8/angular.min.js"></script>
+        <script src="plugins/kendo-ui/js/kendo.all.min.js"></script>
+        <script src="plugins/kendo-ui/js/messages/kendo.messages.zh-CN.min.js"></script>
+        <script src="js/tab.js"></script>
+    </head>
+    <body>
+
+
+    <div ng-controller="myController">
+        <kendo-tabstrip>
+            <ul>
+                <li class="k-state-active">A</li>
+                <li>B</li>
+                <li>C</li>
+            </ul>
+            <div>
+                <div>AAAA</div>
+            </div>
+            <div>
+                <div>BBB</div>
+            </div>
+            <div>
+                <div>CCC</div>
+            </div>
+        </kendo-tabstrip>
+
+        <input kendo-numerictextbox />
+    </div>
+
+
+    </body>
+</html>
