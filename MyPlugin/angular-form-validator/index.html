@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>基于angular的表单验证</title>
+    <link rel="stylesheet" href="css/customValidator.css"/>
+
+    <script src="plugins/angular-1.4.8/angular.js"></script>
+    <script src="js/dataValidationFactory.js"></script>
+    <script src="js/customValidator.js"></script>
+    <script src="js/indexCtrl.js"></script>
+</head>
+<body ng-app="indexModule" ng-controller="indexCtrl">
+    <div>
+        <div style="width:100px; height: 50px;">
+            <label>姓名</label>
+            <div validator-info submit-button-id="saveData" class="validatorInfo_1"  name="姓名" field="name" functions="not_null,min_length_5,max_length_20"></div>
+            <input type="text" ng-model="name" >
+        </div>
+
+        <div  style="width:100px; height: 50px;">
+            <label>年龄</label>
+            <div validator-info submit-button-id="saveData" class="validatorInfo_1"  name="年龄" field="age" functions="not_null"></div>
+            <input type="text" ng-model="age" >
+        </div>
+
+        <div  style="width:100px; height: 50px;">
+            <label>地址</label>
+            <div validator-info submit-button-id="saveData" class="validatorInfo_1"  name="地址" field="address" functions="not_null"></div>
+            <input type="text" ng-model="address" >
+        </div>
+
+        <div  style="width:100px; height: 50px;">
+            <input id="saveData" type="button" value="保存">
+        </div>
+    </div>
+</body>
+</html>
